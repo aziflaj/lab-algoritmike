@@ -1,4 +1,5 @@
 #include <stdio.h>
+#include <stdlib.h>
 #include "trace.h"
 
 /*********** GLOBAL VARIABLES ***********/
@@ -43,7 +44,14 @@ int main(void) {
 	saveTraceBin("../static/simtwo.txt", simTrace2);
 
 	error2 = errorTrace(simTrace2, realTrace);
-	printf("With the 2nd method, the error is calculated to be %f\n", error2);	
+	printf("With the 2nd method, the error is calculated to be %f\n", error2);
 
-	return 0;
+	if (abs(error1) < abs(error2)) {
+		printf("The first method is better");
+	} else {
+		printf("The second method is better\n");
+	}
+
+
+	return (EXIT_SUCCESS);
 }

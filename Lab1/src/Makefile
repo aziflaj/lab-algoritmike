@@ -10,8 +10,8 @@ all:
 	$(CC) app.c trace.c -o app
 	
 	printf "\n"
-	printf "***********"
-	printf "\n*** END ***\n"
+	printf "***********\n"
+	printf "*** END ***\n"
 	printf "***********"
 	printf "\n"
 
