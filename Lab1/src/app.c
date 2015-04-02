@@ -25,7 +25,7 @@ int main(void) {
 	Trace realTrace; 		/* real trace, read from the file */
 	Trace simTrace1;		/* first simulated trace */
 	Trace simTrace2;		/* second simulated trace */
-	float error1 = 0.0, error2 = 0.0;
+	double error1 = 0.0, error2 = 0.0;
 
 	readTrace("../static/cell.txt", &realTrace);
 	printf("There are %d records on the trace\n", realTrace.nbpts);
@@ -46,7 +46,7 @@ int main(void) {
 	error2 = errorTrace(simTrace2, realTrace);
 	printf("With the 2nd method, the error is calculated to be %f\n", error2);
 
-	if (abs(error1) < abs(error2)) {
+	if ( error1 < error2 ) {
 		printf("The first method is better");
 	} else {
 		printf("The second method is better\n");
