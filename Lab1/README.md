@@ -1,7 +1,5 @@
 #LAB #1
 
-[TOC]
-
 ### 1. Pershkrimi i problemit
 Qellimi i ketij laboratori eshte perdorimi i strukturave dhe FILE per leximin e te dhenave. Konkretisht, programi do te shkruhet per te zgjidhur nje problem nga fusha e biologjise.
 Ne fazen e pare, te dhenat e problemit do te simulohen duke perdorur modelin matematik te FitzHugh-Nagumo (shiko [seksionin A](#a-ekuacionet-e-fitzhugh-nagumo)). Keto te dhena do te krahasohen me te dhenat e matura eksperimentalisht te cilat jane ruajtur ne nje skedar te quajtuar `cell.txt`. Me tutje, do te gjendet gabimi midis te dhenave te lexuara nga skedari dhe
