@@ -65,7 +65,7 @@ $$
 $$
 
 $$
-\frac{\mathrm{d\omega} }{\mathrm{d} t} = \epsilon(0.5V - \omega -\delta)
+![dw/dt](http://www.sciweavers.org/upload/Tex2Img_1427970754/render.png)
 $$
 
 Parametrat $\epsilon$,$\delta$, $\alpha$  jane vleresuar dhe rezultatet jane dhene ne dy tabela te quajtuara
