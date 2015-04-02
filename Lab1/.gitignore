@@ -1,2 +1,21 @@
-src/*.exe
-!static/cell.txt
+##################### GITIGNORE RULES FOR static-alloc #####################
+
+# Do not track *.exe files (compiled) 
+# Do not track other text files rather than cell.txt (values measured)
+static-alloc/src/*.exe
+!static-alloc/static/cell.txt
+
+################### END GITIGNORE RULES FOR static-alloc ###################
+
+
+############################################################################
+
+
+##################### GITIGNORE RULES FOR dynamic-alloc ####################
+
+# Do not track *.exe files (compiled) 
+# Do not track other text files rather than cell.txt (values measured)
+dynamic-alloc/src/*.exe
+!dynamic-alloc/static/cell.txt
+
+################### END GITIGNORE RULES FOR dynamic-alloc ##################
