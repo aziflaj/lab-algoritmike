@@ -60,27 +60,14 @@ typedef struct{
 Shkruani funksionet e pjeses se pare duke perdorur strukturen e re.
 
 ### A. Ekuacionet e FitzHugh - Nagumo
-$$
-\frac{\mathrm{dV} }{\mathrm{d} t} = (\alpha - V)(V - 1)V - \omega 
-$$
+![dV/dt](http://www.sciweavers.org/upload/Tex2Img_1427970833/render.png)
 
-$$
 ![dw/dt](http://www.sciweavers.org/upload/Tex2Img_1427970754/render.png)
-$$
 
-Parametrat $\epsilon$,$\delta$, $\alpha$  jane vleresuar dhe rezultatet jane dhene ne dy tabela te quajtuara
+Parametrat ![epsilon](http://www.sciweavers.org/upload/Tex2Img_1427970900/render.png),![delta](http://www.sciweavers.org/upload/Tex2Img_1427970938/render.png), ![alpha](http://www.sciweavers.org/upload/Tex2Img_1427970951/render.png) jane vleresuar dhe rezultatet jane dhene ne dy tabela te quajtuara
 Pa dhe Pb. 
-$$
-P_{a} = \begin{Bmatrix}
-\alpha = 0.5, \delta = 0.01, \epsilon = 0.05
-\end{Bmatrix}
-$$
-
-$$
-P_{b} = \begin{Bmatrix}
-\alpha = 0.75, \delta = 0.3, \epsilon = 0.1
-\end{Bmatrix}
-$$
+![Pa](http://www.sciweavers.org/upload/Tex2Img_1427970857/render.png)
+![Pb](http://www.sciweavers.org/upload/Tex2Img_1427970881/render.png)
 
 **Algorithm1: Algoritmi i Eulerit per zgjidhjen e ekuacioneve diferencial**
 ```
@@ -102,6 +89,4 @@ end
 
 ### B. Error Computation
 Per te llogaritur gabimin midis vleres se matur $x$ dhe vleres se simuluar ${x}'$ do perdorim ekuacionin e meposhtem:
-$$
-E_{rms} = \sqrt{\frac{ \sum_{i=0}^{n} x_{i}-{x_{i}'} } {n} }
-$$
+![error trace](http://www.sciweavers.org/upload/Tex2Img_1427970967/render.png)
