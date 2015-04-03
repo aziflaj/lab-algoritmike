@@ -86,5 +86,5 @@ end
 ```
 
 ### B. Error Computation
-Per te llogaritur gabimin midis vleres se matur $x$ dhe vleres se simuluar ${x}'$ do perdorim ekuacionin e meposhtem:
+Per te llogaritur gabimin midis vleres se matur ![x](http://www.sciweavers.org/upload/Tex2Img_1428071562/render.png) dhe vleres se simuluar ![x'](http://www.sciweavers.org/upload/Tex2Img_1428071582/render.png) do perdorim ekuacionin e meposhtem:
 ![error trace](http://www.sciweavers.org/upload/Tex2Img_1427970967/render.png)
