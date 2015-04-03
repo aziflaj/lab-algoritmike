@@ -20,7 +20,7 @@ typedef struct{
 Ne kete strukture, `comment` i referohet Emrit te Eksperimentit te kryer, tabela `time` ruan vlerat e kohes kur jane matur/llogaritur te dhenat dhe `value` ruan vlerat e matura ne kohen perkatese. Do te pranojme qe gjithsej mund te masim 4096 vlera.
 
  - Shkruani funksionin `simutrace(int tmax, float dt, float params[], trace uneTrace)`. Ky funksion duhet te mbush strukturen `uneTrace`. Per kete faze simulimi, do te zgjedhim `tmax = 1000ms` dhe `dt = 0.5ms`, per t’i pershtatur me te dhenat e eksperimentit. Per me tutje do te perdorim ekuacionet e modelit ne seksionin A.
- - Shkruani funksionin printT race(trace uneTrace) i cili do te afishoj ne ekran permajtjen e struktures ne menyren e meposhtme:
+ - Shkruani funksionin `printTrace(trace uneTrace)` i cili do te afishoj ne ekran permajtjen e struktures ne menyren e meposhtme:
 ```
 CommentsOfTrace
 t=0.0 v=0.0000
