@@ -5,7 +5,7 @@
 #include "trace.h"
 
 void readTrace(char* fileTrace, Trace *uneTrace) {
-	float t, v;
+	int max, i = 0;
 	FILE *fp = fopen(fileTrace, "r");
 	if (fp == NULL) {
 		fprintf(stderr, "%s nuk ekziston.\n", fileTrace);
@@ -13,40 +13,39 @@ void readTrace(char* fileTrace, Trace *uneTrace) {
 	}
 
 	fscanf(fp, "%s", uneTrace->comment);
-	printf("Debug: uneTrace->comment %s \n", uneTrace->comment);
 	fscanf(fp, "%d", &uneTrace->nbpts);
-	printf("Debug: uneTrace->nbpts %d\n", uneTrace->nbpts);
 
-	uneTrace->time = (float*) malloc( uneTrace->nbpts * sizeof(float));
-	uneTrace->value = (float*) malloc( uneTrace->nbpts * sizeof(float));
+	max = uneTrace->nbpts;
+
+	uneTrace->time = (float*) malloc(sizeof(float) * max);
+	uneTrace->value = (float*) malloc(sizeof(float) * max);
 
 	if (uneTrace->time == NULL || uneTrace->value == NULL) {
 		printf("Failed to allocate memory for the trace\n");
 	}
 
-	while (!feof(fp)) {
-		fscanf(fp, "%f", uneTrace->time);
-		fscanf(fp, "%f", uneTrace->value);
-		
-		printf("%f %f\n", *uneTrace->time, *uneTrace->value); 
-		
-		uneTrace->value++;
-		uneTrace->time++;
+	while (i < max) {
+		fscanf(fp, "%f", &uneTrace->time[i]);
+		fscanf(fp, "%f", &uneTrace->value[i]);
+		i++;
 	}
 
 	fclose(fp);
 }
 
-/*
-void printTrace(Trace *uneTrace) {
-	int i = 0, max = uneTrace->nbpts;
-	printf("%s\n", uneTrace->comment);
+
+
+void printTrace(Trace uneTrace) {
+	int i = 0, max = uneTrace.nbpts;
+	printf("%s\n", uneTrace.comment);
 	printf("%d\n", max);
 
 	while(i < max) {
-		printf("%f %f\n", *uneTrace->time, *uneTrace->value); 
-		uneTrace->value++;
-		uneTrace->time++;
+		printf("%.1f %.4f\n", *uneTrace.time, *uneTrace.value); 
+		
+		uneTrace.value++;
+		uneTrace.time++;
+		
 		i++;
 	}
 }

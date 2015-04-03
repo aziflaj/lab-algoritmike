@@ -10,7 +10,7 @@ typedef struct {
 
 void simulate(int tmax, float dt, float params[], Trace *uneTrace);
 
-void printTrace(Trace *uneTrace);
+void printTrace(Trace uneTrace);
 
 void saveTraceBin(char* fileTrace, Trace uneTrace);
 
