@@ -29,12 +29,6 @@ int main(void) {
 
 	readTrace("../static/cell.txt", &realTrace);
 	printf("There are %d records on the trace\n", realTrace.nbpts);
-	/*
-	printf("The 1st record on the trace: %.1f %.4f (should be 0.0 -0.0225)\n", *realTrace.time, *realTrace.value);
-	realTrace.time++;
-	realTrace.value++;
-	printf("The 2nd record on the trace: %.1f %.4f (should be 0.5 0.1564)\n", *realTrace.time, *realTrace.value);
-	*/	
 	printTrace(realTrace); 
 
 /*
