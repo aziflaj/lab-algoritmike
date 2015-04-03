@@ -3,7 +3,7 @@
 
 typedef struct {
 	char comment[40]; 	/* Name of the experiment */
-	int nbpts; 			/* Number of measurements (0-based) */
+	int nbpts; 		/* Number of measurements (0-based) */
 	float *time;		/* Time of a measurement */
 	float *value;		/* The value measured */
 } Trace;
