@@ -78,7 +78,7 @@ void simulate(int tmax, float dt, float params[], Trace *uneTrace) {
 	uneTrace->nbpts = i;
 }
 
-/*
+
 float errorTrace(Trace simTrace, Trace realTrace) {
 	int n = simTrace.nbpts;
 	int i;
@@ -95,7 +95,7 @@ float errorTrace(Trace simTrace, Trace realTrace) {
 	return sqrt(error);
 }
 
-*/
+
 void saveTraceBin(char* fileTrace, Trace uneTrace) {
 	FILE *fp = fopen(fileTrace, "w+");
 	int i = 0;

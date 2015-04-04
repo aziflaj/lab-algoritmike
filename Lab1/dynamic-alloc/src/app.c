@@ -33,7 +33,7 @@ int main(void) {
 
 	simulate(tmax, dt, Pa, &simTrace1);
 	saveTraceBin("../static/simone.txt", simTrace1);
-	/*
+	
 	error1 = errorTrace(simTrace1, realTrace);
 	printf("With the 1st method, the error is calculated to be %f\n", error1);
 
@@ -50,6 +50,6 @@ int main(void) {
 		printf("The second method is better\n");
 	}
 
-*/
+
 	return (EXIT_SUCCESS);
 }
