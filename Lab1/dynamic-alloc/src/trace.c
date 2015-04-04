@@ -49,12 +49,18 @@ void printTrace(Trace uneTrace) {
 		i++;
 	}
 }
-/*
+
+
 void simulate(int tmax, float dt, float params[], Trace *uneTrace) {
-	int i = 0;
+	int i = 0, max;
 	float v = 0, w = 0, dv = 0, dw = 0, t = 0;
 
 	strcpy(uneTrace->comment, "Simulation");
+
+	max = tmax/dt + 1;
+
+	uneTrace->time = (float*) malloc(sizeof(float) * max);
+	uneTrace->value = (float*) malloc(sizeof(float) * max);
 
 	while (t <= tmax) {
 		dv = (params[0] - v) * (v - 1) * v - w;
@@ -72,6 +78,7 @@ void simulate(int tmax, float dt, float params[], Trace *uneTrace) {
 	uneTrace->nbpts = i;
 }
 
+/*
 float errorTrace(Trace simTrace, Trace realTrace) {
 	int n = simTrace.nbpts;
 	int i;
@@ -88,6 +95,7 @@ float errorTrace(Trace simTrace, Trace realTrace) {
 	return sqrt(error);
 }
 
+*/
 void saveTraceBin(char* fileTrace, Trace uneTrace) {
 	FILE *fp = fopen(fileTrace, "w+");
 	int i = 0;
@@ -105,4 +113,3 @@ void saveTraceBin(char* fileTrace, Trace uneTrace) {
 
 	fclose(fp);
 }
-*/

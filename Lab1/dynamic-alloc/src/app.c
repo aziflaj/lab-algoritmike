@@ -29,16 +29,15 @@ int main(void) {
 
 	readTrace("../static/cell.txt", &realTrace);
 	printf("There are %d records on the trace\n", realTrace.nbpts);
-	printTrace(realTrace); 
 
-/*
+
 	simulate(tmax, dt, Pa, &simTrace1);
 	saveTraceBin("../static/simone.txt", simTrace1);
-
+	/*
 	error1 = errorTrace(simTrace1, realTrace);
 	printf("With the 1st method, the error is calculated to be %f\n", error1);
 
-
+	
 	simulate(tmax, dt, Pb, &simTrace2);
 	saveTraceBin("../static/simtwo.txt", simTrace2);
 
