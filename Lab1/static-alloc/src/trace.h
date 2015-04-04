@@ -4,8 +4,8 @@
 #define MAX_RECORDS 4096
 
 typedef struct {
-	char comment[40]; 			/* Name of the experiment */
-	int nbpts; 					/* Number of measurements (0-based) */
+	char comment[40]; 		/* Name of the experiment */
+	int nbpts; 			/* Number of measurements (0-based) */
 	float time[MAX_RECORDS];	/* Time of a measurement */
 	float value[MAX_RECORDS];	/* The value measured */
 } Trace;
