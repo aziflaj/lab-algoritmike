@@ -59,6 +59,7 @@ void readTrace(char* fileTrace, Trace* uneTrace);
  *
  * @param simTrace The simulated Trace instance
  * @param realTrace The real Trace instance, measured
+ * @return The error rate between a simulated and a measured Trace instance
  *
  * @author: Aldo Ziflaj
  */
