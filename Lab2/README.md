@@ -3,7 +3,7 @@
 ## 1. Hyrje
 Ne duam te stokojme dhe te manipulojme tekste me madhesi te pepercaktuar ne memorie. Atehere ne do te reprezantojme nje text me nje liste zinxhir te dyfishte:
 
-![bidirectional-list]()
+![bidirectional-list](https://raw.githubusercontent.com/aziflaj/lab-algoritmike/master/Lab2/bi-list.png)
 
 ## 2. Struktura e te dhenave
  - Deklaroni konstanten `N`.
