@@ -27,7 +27,9 @@ struct iter {
 	int icase;
 };
 
-Node createNodeFromCharArray(char *charArray);
+Text createTextFromCharArray(char *charArray);
+
+Node createNode();
 
 
 #endif /* _TEXT_H_ */

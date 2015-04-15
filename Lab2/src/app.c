@@ -2,12 +2,14 @@
 #include <stdlib.h>
 #include "text.h"
 
-/*********** GLOBAL VARIABLES ***********/
-
-/******* END OF GLOBAL VARIABLES *******/
 
 int main(void) {
+	/*
 	Text hello = createTextFromCharArray("Hello, World!");
+	*/
+
+	Node newNode = createNode();
+	printf("%d size\n", newNode->size);
 
 
 	return (EXIT_SUCCESS);
