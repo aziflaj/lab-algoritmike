@@ -10,7 +10,7 @@ all:
 
 	#
 	# Compile below
-	# $(CC) app.c header.c -o app
+	$(CC) app.c text.c -o app
 	
 	printf "\n"
 	printf "***********\n"

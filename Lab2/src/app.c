@@ -7,6 +7,8 @@
 /******* END OF GLOBAL VARIABLES *******/
 
 int main(void) {
+	Node hello = createNodeFromCharArray("Hello, World!");
+
 
 	return (EXIT_SUCCESS);
 }
