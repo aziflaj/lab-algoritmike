@@ -1,10 +1,9 @@
-#include <stdio.h>
+#include <string.h>
 #include "utils.h"
 
-int main(void) {
+int testSubString() {
 	char *mainstr = "Hello, World";
 	char *newStr = subString(mainstr, 1, 4);
-	printf("%s\n", mainstr);
-	printf("%s\n", newStr);
-	return 0;
+
+	return (strcmp(newStr, "ello") == 0) ? 1 : 0;
 }

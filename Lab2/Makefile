@@ -4,7 +4,7 @@
 
 COMPILE = gcc -std=c99 -Ilibs
 MAIN_FILES = src/app.c src/text.c libs/utils.c
-TEST_FILES = tests/test.c libs/utils.c
+TEST_FILES = tests/runtests.c tests/test.c libs/utils.c
 
 all:
 	$(RM) *.exe
