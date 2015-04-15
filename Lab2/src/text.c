@@ -16,5 +16,17 @@ Text createTextFromCharArray(char *charArray) {
 
 Node createNode() {
 	Node n = (Node) malloc(sizeof(Node));
+	n->next = NULL;
+	n->prev = NULL;
+	n->size = 0;
 	return n;
+}
+
+Text createText() {
+	Text t = (Text) malloc(sizeof(Text));
+	t->head = NULL;
+	t->tail = NULL;
+	t->count = 0;
+	t->size = 0;
+	return t;
 }

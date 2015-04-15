@@ -31,5 +31,7 @@ Text createTextFromCharArray(char *charArray);
 
 Node createNode();
 
+Text createText();
+
 
 #endif /* _TEXT_H_ */
