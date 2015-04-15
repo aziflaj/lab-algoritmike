@@ -5,7 +5,7 @@
 
 int main(void) {
 	/*
-	/* Testing createTextFromCharArray() *
+	/* Testing createTextFromCharArray() */
 	Text hello = createTextFromCharArray("Hello, World!");
 
 	/* Testing creation of empty node *

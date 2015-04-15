@@ -2,15 +2,39 @@
 #include <stdlib.h>
 #include <string.h>
 #include "text.h"
+#include "utils.h"
 
 Text createTextFromCharArray(char *charArray) {
-	int len = strlen(charArray);
-	int numberOfNodes = (len % NODE_TEXT_LEN == 0) ? 
-						(int) (len/NODE_TEXT_LEN) : 
-						(int) (len/NODE_TEXT_LEN) + 1;
+	Node head, tail;
+	int size = strlen(charArray);
+	int count = (size % NODE_TEXT_LEN == 0) ? 
+					(int) (size/NODE_TEXT_LEN) : 
+					(int) (size/NODE_TEXT_LEN) + 1;
 
-	printf("%d chars\n", len);
-	printf("%d nodes\n", numberOfNodes);
+	int i = 0;
+	int headTaken = 0; /* Status of head */
+	Node cursor;
+
+	while(i < count) {
+		Node n = (Node) malloc(sizeof(Node));
+		if (headTaken == 0) {
+			head = n;
+			char *kot;
+			subString(charArray, i*NODE_TEXT_LEN, (i+1)*NODE_TEXT_LEN, kot);
+			printf("%s\n", kot);
+			strcpy(head->data, kot );
+			cursor = n;
+			headTaken = 1;
+		} else {
+			/* head already taken *
+			txt->tail->next = n; */
+		}
+
+		i++;
+	}
+
+	printf("%d chars\n", size);
+	printf("%d nodes\n", count);
 	return NULL;
 }
 
@@ -29,4 +53,14 @@ Text createText() {
 	t->count = 0;
 	t->size = 0;
 	return t;
+}
+
+void printText(Text t) {
+	Node cursor = t->head;
+
+	do {
+		printf("%s", cursor->data);
+		cursor = cursor->next;
+	} while (cursor != NULL);
+
 }

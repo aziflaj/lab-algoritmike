@@ -33,5 +33,7 @@ Node createNode();
 
 Text createText();
 
+void printText(Text t);
+
 
 #endif /* _TEXT_H_ */
