@@ -1,8 +1,9 @@
 #include <stdio.h>
-#include "test.h"
 #include "utils.h"
+#include "test.h"
+
 
 int main(void) {
-	printf("Testing subString function: %d\n\n", testSubString());
+	printf("Testing subString function: %s\n\n", stringifyTestResult(testSubString())); 
 	return 0;
 }
