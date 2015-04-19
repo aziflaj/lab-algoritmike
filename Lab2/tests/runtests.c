@@ -4,6 +4,6 @@
 
 
 int main(void) {
-	printf("Testing subString function: %s\n\n", stringifyTestResult(testSubString())); 
+	printf("\nTesting subString function: %s\n", stringifyTestResult(testSubString()));
 	return 0;
 }

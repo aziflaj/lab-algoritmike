@@ -6,7 +6,8 @@
 
 typedef struct linked_list_text_item* Node; 
 struct linked_list_text_item {
-	char data[NODE_TEXT_LEN];
+	//char data[NODE_TEXT_LEN];
+	char *data;
 	int size;
 	Node next;
 };
