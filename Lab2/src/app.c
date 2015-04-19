@@ -5,7 +5,7 @@
 
 int main(void) {
 	/*
-	/* Testing createTextFromCharArray() */
+	/* Testing createTextFromCharArray() *
 	Text hello = createTextFromCharArray("Hello, World!");
 
 	/* Testing creation of empty node *
@@ -19,6 +19,11 @@ int main(void) {
 		printf("count: %d\n", t->count);
 	}
 	*/
+
+	Text hello = createText();
+	appendText(hello, "Hello, World!");
+	printf("PRINTING TEXT\n");
+	printText(hello);
 
 	return (EXIT_SUCCESS);
 }

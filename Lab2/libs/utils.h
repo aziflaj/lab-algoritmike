@@ -9,14 +9,17 @@
 char* subString(char* str, int from, int to) {
 	char *newStr;
 	
-	printf("params: %d, %d\n", from,to);
+	/*
+	printf("params: %d, %d\n", from,to); 
+	*/
 	if (from < 0)  from = 0;;
 
 	if (to > (strlen(str) - 1)) 
 		to = strlen(str);
 
+	/*
 	printf("params changed: %d, %d\n", from,to);
-
+	*/
 	int len = to - from ;
 	newStr = (char*) malloc(sizeof(char) * len);
 

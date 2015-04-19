@@ -8,7 +8,6 @@ typedef struct linked_list_text_item* Node;
 struct linked_list_text_item {
 	char data[NODE_TEXT_LEN];
 	int size;
-	Node prev;
 	Node next;
 };
 
@@ -34,6 +33,8 @@ Node createNode();
 Text createText();
 
 void printText(Text t);
+
+void appendText(Text t, char* s);
 
 
 #endif /* _TEXT_H_ */
