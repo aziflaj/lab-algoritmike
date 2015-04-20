@@ -58,14 +58,13 @@ typedef struct{
 Shkruani funksionet e pjeses se pare duke perdorur strukturen e re.
 
 ### A. Ekuacionet e FitzHugh - Nagumo
-![dV/dt](http://www.sciweavers.org/upload/Tex2Img_1427970833/render.png)
+![dV/dt](https://raw.githubusercontent.com/aziflaj/lab-algoritmike/master/Lab1/imgs/dVdt.png)
 
-![dw/dt](http://www.sciweavers.org/upload/Tex2Img_1427970754/render.png)
+![dw/dt](https://raw.githubusercontent.com/aziflaj/lab-algoritmike/master/Lab1/imgs/dwdt.png)
 
-Parametrat ![epsilon](http://www.sciweavers.org/upload/Tex2Img_1427970900/render.png),![delta](http://www.sciweavers.org/upload/Tex2Img_1427970938/render.png), ![alpha](http://www.sciweavers.org/upload/Tex2Img_1427970951/render.png) jane vleresuar dhe rezultatet jane dhene ne dy tabela te quajtuara
-Pa dhe Pb. 
-![Pa](http://www.sciweavers.org/upload/Tex2Img_1427970857/render.png)
-![Pb](http://www.sciweavers.org/upload/Tex2Img_1427970881/render.png)
+Parametrat ![epsilon](https://raw.githubusercontent.com/aziflaj/lab-algoritmike/master/Lab1/imgs/e.png),![delta](https://raw.githubusercontent.com/aziflaj/lab-algoritmike/master/Lab1/imgs/d.png), ![alpha](https://raw.githubusercontent.com/aziflaj/lab-algoritmike/master/Lab1/imgs/a.png) jane vleresuar dhe rezultatet jane dhene ne dy tabela te quajtuara Pa dhe Pb. 
+![Pa](https://raw.githubusercontent.com/aziflaj/lab-algoritmike/master/Lab1/imgs/Pa.png)
+![Pb](https://raw.githubusercontent.com/aziflaj/lab-algoritmike/master/Lab1/imgs/Pb.png)
 
 **Algorithm1: Algoritmi i Eulerit per zgjidhjen e ekuacioneve diferencial**
 ```
@@ -86,5 +85,5 @@ end
 ```
 
 ### B. Error Computation
-Per te llogaritur gabimin midis vleres se matur ![x](http://www.sciweavers.org/upload/Tex2Img_1428071562/render.png) dhe vleres se simuluar ![x'](http://www.sciweavers.org/upload/Tex2Img_1428071582/render.png) do perdorim ekuacionin e meposhtem:
-![error trace](http://www.sciweavers.org/upload/Tex2Img_1427970967/render.png)
+Per te llogaritur gabimin midis vleres se matur ![x](https://raw.githubusercontent.com/aziflaj/lab-algoritmike/master/Lab1/imgs/x.png) dhe vleres se simuluar ![x'](https://raw.githubusercontent.com/aziflaj/lab-algoritmike/master/Lab1/imgs/x'.png) do perdorim ekuacionin e meposhtem:
+![error trace](https://raw.githubusercontent.com/aziflaj/lab-algoritmike/master/Lab1/imgs/erms.png)
