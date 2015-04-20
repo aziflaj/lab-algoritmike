@@ -19,7 +19,7 @@ typedef struct{
 
 Ne kete strukture, `comment` i referohet Emrit te Eksperimentit te kryer, tabela `time` ruan vlerat e kohes kur jane matur/llogaritur te dhenat dhe `value` ruan vlerat e matura ne kohen perkatese. Do te pranojme qe gjithsej mund te masim 4096 vlera.
 
- - Shkruani funksionin `simutrace(int tmax, float dt, float params[], trace uneTrace)`. Ky funksion duhet te mbush strukturen `uneTrace`. Per kete faze simulimi, do te zgjedhim `tmax = 1000ms` dhe `dt = 0.5ms`, per t’i pershtatur me te dhenat e eksperimentit. Per me tutje do te perdorim ekuacionet e modelit ne seksionin A.
+ - Shkruani funksionin `simutrace(int tmax, float dt, float params[], trace *uneTrace)`. Ky funksion duhet te mbush strukturen `uneTrace`. Per kete faze simulimi, do te zgjedhim `tmax = 1000ms` dhe `dt = 0.5ms`, per t’i pershtatur me te dhenat e eksperimentit. Per me tutje do te perdorim ekuacionet e modelit ne seksionin A.
  - Shkruani funksionin `printTrace(trace uneTrace)` i cili do te afishoj ne ekran permajtjen e struktures ne menyren e meposhtme:
 ```
 CommentsOfTrace
@@ -29,12 +29,12 @@ t=1.0 v=0.0001
 t=1.5 v=0.0003
 ...
 ```
- - Shkruani funksionin `saveTraceBin(char  Filetrace, trace uneTrace)` qe do te ruante te dhenat e uneTrace ne nje file, ne menyre qe te dhenat te mund te perdoren me vone.
+ - Shkruani funksionin `saveTraceBin(char *Filetrace, trace uneTrace)` qe do te ruante te dhenat e uneTrace ne nje file, ne menyre qe te dhenat te mund te perdoren me vone.
 
 #### 2.1 Leximi i skedarit te eksperimentit
 Ne kete pjese duhet te lexojme rezultatet e eksperimentit te regjistruar ne file `cell.txt`.
 
- - Shkruani funksionin `readTrace(char  fileName, trace  uneTrace)` qe do te lexonte permajtjen e file, emri i te cilit kalohet si argument i funksionit, dhe rimbush strukturen uneTrace me te dhenat e lexuara.
+ - Shkruani funksionin `readTrace(char *fileName, trace *uneTrace)` qe do te lexonte permajtjen e file, emri i te cilit kalohet si argument i funksionit, dhe rimbush strukturen uneTrace me te dhenat e lexuara.
  - Afishoni te dhenat e lexuara.
 
 #### 2.2 Perfundimet e fazes se pare
