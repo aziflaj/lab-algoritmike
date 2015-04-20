@@ -34,6 +34,8 @@ Node createNode();
 
 Text createText();
 
+void freeText(Text t);
+
 void printText(Text t);
 
 void appendText(Text t, char* s);
@@ -42,5 +44,6 @@ void pushText(Text t, char* s);
 
 Iter createIterAtBegin(Text t);
 
+void freeIter(Iter iterator);
 
 #endif /* _TEXT_H_ */

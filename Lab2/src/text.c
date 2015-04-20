@@ -78,3 +78,11 @@ Iter createIterAtBegin(Text t) {
 
 	return iterator;
 }
+
+void freeText(Text t) {
+	free(t);
+}
+
+void freeIter(Iter iterator) {
+	free (iterator);
+}
