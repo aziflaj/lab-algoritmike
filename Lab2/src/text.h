@@ -37,5 +37,7 @@ void printText(Text t);
 
 void appendText(Text t, char* s);
 
+void pushText(Text t, char* s);
+
 
 #endif /* _TEXT_H_ */

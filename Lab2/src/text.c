@@ -57,3 +57,12 @@ void appendText(Text t, char* s) {
 	t->size += newSize;
 	t->count += newCount;
 }
+
+void pushText(Text t, char* s) {
+	Text otherText = createText();
+	appendText(otherText, s);
+
+	Node other_tail = otherText->tail;
+	other_tail->next = t->head;
+	t->head = otherText->head;
+}
