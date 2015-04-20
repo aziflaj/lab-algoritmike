@@ -1,7 +1,7 @@
 # README
-[![forthebadge](http://forthebadge.com/images/badges/compatibility-emacs.svg)](http://forthebadge.com)
-[![forthebadge](http://forthebadge.com/images/badges/kinda-sfw.svg)](http://forthebadge.com)
-[![forthebadge](http://forthebadge.com/images/badges/powered-by-water.svg)](http://forthebadge.com)
+![forthebadge](http://forthebadge.com/images/badges/compatibility-emacs.svg)
+![forthebadge](http://forthebadge.com/images/badges/kinda-sfw.svg)
+![forthebadge](http://forthebadge.com/images/badges/powered-by-water.svg)
 
 
 
