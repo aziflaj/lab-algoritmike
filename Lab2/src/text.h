@@ -22,6 +22,7 @@ struct text {
 };
 
 
+typedef struct iter* Iter;
 struct iter {
 	Node self;
 	int icase;
@@ -38,6 +39,8 @@ void printText(Text t);
 void appendText(Text t, char* s);
 
 void pushText(Text t, char* s);
+
+Iter createIterAtBegin(Text t);
 
 
 #endif /* _TEXT_H_ */

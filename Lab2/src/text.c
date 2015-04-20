@@ -23,11 +23,11 @@ Text createText() {
 }
 
 void printText(Text t) {
-	Node cursor = t->head;
+	Iter cursor = createIterAtBegin(t);
 
-	while (cursor != NULL) {
-		printf("%s", cursor->data);
-		cursor = cursor->next;
+	while (cursor->self != NULL) {
+		printf("%s", cursor->self->data);
+		cursor->self = (cursor->self)->next;
 	}
 }
 
@@ -65,4 +65,16 @@ void pushText(Text t, char* s) {
 	Node other_tail = otherText->tail;
 	other_tail->next = t->head;
 	t->head = otherText->head;
+
+	t->size += otherText->size;
+	t->count += otherText->count;
+}
+
+Iter createIterAtBegin(Text t) {
+	Iter iterator = (Iter) malloc(sizeof(struct iter));
+
+	iterator->self = t->head;
+	iterator->icase = 0;
+
+	return iterator;
 }
