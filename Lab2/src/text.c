@@ -7,8 +7,9 @@
 
 Node createNode() {
 	Node n = (Node) malloc(sizeof(Node));
-	n->data = (char*) malloc(sizeof(char) * NODE_TEXT_LEN);
+	strcpy(n->data, "");
 	n->next = NULL;
+	n->prev = NULL;
 	n->size = 0;
 	return n;
 }
@@ -32,19 +33,26 @@ void printText(Text t) {
 }
 
 void appendText(Text t, char* s) {
-
+	// calculate the size of the appended string
 	int newSize = strlen(s);
+
+	// calculate the number of nodes to add to the text.
 	int newCount = (newSize % NODE_TEXT_LEN == 0) ? 
 					(int) (newSize/NODE_TEXT_LEN) : 
 					(int) (newSize/NODE_TEXT_LEN) + 1;
 
 	for (int i=0; i<newCount; i++) {
 		Node n = createNode();
-		strcpy(n->data, subString(s, i*NODE_TEXT_LEN, (i+1)*NODE_TEXT_LEN));
+
+		strncpy(n->data, s + (i*NODE_TEXT_LEN), NODE_TEXT_LEN);
+		
+		debug("Adding node #%d",i);
+		debug("Node #%d has this text: %s",i,n->data);
+
 		n->size = strlen(n->data);
 
 		if (t->head == NULL) {
-			/* Text is empty: head is also tail */
+			// Text is empty: head is also tail
 			t->head = n;
 			t->tail = n;
 		} else {
