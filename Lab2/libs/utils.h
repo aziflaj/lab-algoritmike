@@ -14,4 +14,10 @@ void debug(const char *format, ...) {
 	printf("\n");
 }
 
+void printString(char *str, int len) {
+	for (int i=0; i<len;i++) {
+		printf("%c", str[i]);
+	}
+}
+
 #endif /* _UTILS_H_ */

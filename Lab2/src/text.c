@@ -27,8 +27,9 @@ void printText(Text t) {
 	Iter cursor = createIterAtBegin(t);
 
 	while (cursor->self != NULL) {
-		printf("%s", cursor->self->data);
+		printString(cursor->self->data, cursor->self->size);
 		cursor->self = (cursor->self)->next;
+		cursor->icase++;
 	}
 }
 
@@ -45,9 +46,6 @@ void appendText(Text t, char* s) {
 		Node n = createNode();
 
 		strncpy(n->data, s + (i*NODE_TEXT_LEN), NODE_TEXT_LEN);
-		
-		debug("Adding node #%d",i);
-		debug("Node #%d has this text: %s",i,n->data);
 
 		n->size = strlen(n->data);
 
