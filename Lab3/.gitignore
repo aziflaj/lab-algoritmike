@@ -1,0 +1,4 @@
+src/*.exe
+libs/*.exe
+test/*.exe
+*.exe
