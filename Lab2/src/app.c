@@ -12,7 +12,8 @@ int main(void) {
 
 	pushText(hello, "123---");
 	printf("\nPRINTING OTHER TEXT\n");
-	printText(hello);	
+	printText(hello);
+	printf("\n");
 
 	return (EXIT_SUCCESS);
 }
