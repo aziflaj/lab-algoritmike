@@ -22,7 +22,7 @@ Funksioni `clock()` ndodhet ne librarine e `time.h`.
 
 Shembull: Supozojme qe eshte dhene pema A. Pas futjes se numrit 45, perftohet pema B.
 
-![Shembull]()
+![Shembull](https://raw.githubusercontent.com/aziflaj/lab-algoritmike/master/Lab4/trees.png)
 
 4. Shkruani funksionin `node *research(int n, node *root)` qe gjen elementin me vlere n ne pemen ne pemen me rrenje root. Cili eshte kompleksiteti i ketij funksioni?
 5. Shkruani funksionin `int* length(node *root)` qe gjen gjatesine e pemes. Psh gjatesia e pemeve `A` dhe `B` eshte 3.
