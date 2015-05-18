@@ -22,12 +22,20 @@ int main(void) {
 
 	//printWithPosition(hello, iterator);
 
-	moveForwardIter(hello, iterator, 70);
+	moveForwardIter(hello, iterator, 7);
 
+	printf("Moving the iterator 7 chars forward\n");
+	// print with iter
 	printf("New iterator: icase %d\n", iterator->icase);
-
 	printf("The text on that node is: %s\n", iterator->self->data);
 
+
+
+	moveBackwardIter(hello, iterator, 30);
+	printf("Moving the iterator 30 chars backward\n");
+	// print with iter
+	printf("New iterator: icase %d\n", iterator->icase);
+	printf("The text on that node is: %s\n", iterator->self->data);
 
 	return (EXIT_SUCCESS);
 }

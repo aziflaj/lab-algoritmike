@@ -177,7 +177,41 @@ void moveForwardIter(Text t, Iter iterator, int n) {
 		newNodePosition = t->count;
 	}
 
-	debug("newCharPosition is %d and should point to the %d node", newCharPosition, newNodePosition);
+	iterator->icase = newCharPosition;
+	//set the correct node;
+
+	Node cursor = t->head;
+	int counter = 1; //counting nodes as 1-based lists
+
+	do {
+		if (counter != newNodePosition) {
+			cursor = cursor->next;
+			++counter;
+		} else {
+			iterator->self = (Node) cursor;
+			break;
+		}
+
+	} while (cursor != NULL);
+
+}
+
+void moveBackwardIter(Text t, Iter iterator, int n) {
+	if (t == NULL || iterator == NULL) {
+		return;
+	}
+
+	int newCharPosition = iterator->icase - n;
+	int newNodePosition = ((newCharPosition) / 4) + 1;
+
+	if (newCharPosition < 0) {
+		newCharPosition = 0;
+	}
+
+	if (newNodePosition < 0) {
+		newNodePosition = 1;
+	}
+
 	iterator->icase = newCharPosition;
 	//set the correct node;
 

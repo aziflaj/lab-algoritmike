@@ -122,6 +122,15 @@ void normalizeText(Text t);
 
 void printWithPosition(Text t, Iter i);
 
+
+/**
+ * @see move_forward_iter at Lab3.pdf
+ */
 void moveForwardIter(Text t, Iter iterator, int n);
+
+/**
+ * @see move_backward_iter at Lab3.pdf
+ */
+void moveBackwardIter(Text t, Iter iterator, int n);
 
 #endif /* _TEXT_H_ */
