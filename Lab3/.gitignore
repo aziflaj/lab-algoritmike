@@ -1,4 +1,10 @@
+
+# ignore .exe files under Windows
 src/*.exe
 libs/*.exe
 test/*.exe
 *.exe
+
+# ignore app and test executables under Linux
+app
+test
