@@ -24,12 +24,11 @@ Text createText() {
 }
 
 void printText(Text t) {
-	Iter cursor = createIterAtBegin(t);
+	Node cursor = t->head;
 
-	while (cursor->self != NULL) {
-		printf("%s", cursor->self->data);
-		cursor->self = (cursor->self)->next;
-		cursor->icase++;
+	while (cursor != NULL) {
+		printf("%s", cursor->data);
+		cursor = cursor->next;
 	}
 }
 
