@@ -112,39 +112,80 @@ void freeIter(Iter iterator);
 
 /****************************************************/
 
+/**
+ * Calculates the efficiency of memory usage
+ *
+ * @param t A Text instance to calculate the memory usage
+ * @return The value of efficiency
+ *
+ * @author Aldo Ziflaj
+ */
 float evalText(Text t);
 
 
 /**
- * @see shift_text at Lab3.pdf
+ * Normalizes a Text instance to use the memory in the most efficient way
+ *
+ * @param t A Text instance to normalize
+ *
+ * @author Aldo Ziflaj 
  */
 void normalizeText(Text t);
 
 
 /**
- * @see show_text at Lab3.pdf
+ * Prints a Text instance with an Iterator at its position, marked by asterix (*)
+ *
+ * @param t A Text instance to print
+ * @param iterator An Iter instance holding a position at the given Text
+ *
+ * @author Aldo Ziflaj 
  */ 
 void printWithPosition(Text t, Iter iterator);
 
 
 /**
- * @see move_forward_iter at Lab3.pdf
+ * Moves the iterator forward (right) by a given number of characters
+ *
+ * @param t A Text instance where the iterator lives
+ * @param iterator The Iter instance to be moved
+ * @param n The number of characters to pass
+ *
+ * @author Aldo Ziflaj  
  */
 void moveForwardIter(Text t, Iter iterator, int n);
 
 /**
- * @see move_backward_iter at Lab3.pdf
+ * Moves the iterator backward (left) by a given number of characters
+ *
+ * @param t A Text instance where the iterator lives
+ * @param iterator The Iter instance to be moved
+ * @param n The number of characters to pass
+ *
+ * @author Aldo Ziflaj   
  */
 void moveBackwardIter(Text t, Iter iterator, int n);
 
 
 /**
- * @see insert_text at Lab3.pdf
+ * Inserts a given string after the iterator
+ *
+ * @param t A Text instance where to add the text
+ * @param i An Iter instance that holds the position where to insert the string
+ * @param str The string to insert into the text
+ *
+ * @author Aldo Ziflaj
  */
 void insertTextAfterIter(Text t, Iter i, char *str);
 
 /**
- * @see delete_text at Lab3.pdf
+ * Deletes a given number of characters before the iterator
+ *
+ * @param t A Text instance where to delete the characters
+ * @param i An Iter instance that holds the position were to start deleting
+ * @param n The number of characters to be deleted
+ *
+ * @author Aldo Ziflaj 
  */
 void deleteTextBeforeIter(Text t, Iter i, int n);
 
