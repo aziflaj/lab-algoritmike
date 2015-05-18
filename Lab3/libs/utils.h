@@ -18,6 +18,7 @@ void printString(char *str, int len) {
 	for (int i=0; i<len;i++) {
 		printf("%c", str[i]);
 	}
+	printf("\t| %d\n",len);
 }
 
 #endif /* _UTILS_H_ */

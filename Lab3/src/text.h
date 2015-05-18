@@ -110,4 +110,8 @@ Iter createIterAtBegin(Text t);
  */
 void freeIter(Iter iterator);
 
+/****************************************************/
+
+float eval_text(Text t);
+
 #endif /* _TEXT_H_ */

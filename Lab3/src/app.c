@@ -7,13 +7,12 @@ int main(void) {
 
 	Text hello = createText();
 	appendText(hello, "Hello, World!");
-	printf("PRINTING TEXT\n");
-	printText(hello);
-
 	pushText(hello, "123---");
-	printf("\nPRINTING OTHER TEXT\n");
 	printText(hello);
 	printf("\n");
+
+	float evaluated = eval_text(hello);
+	printf("eval_text of the above is %.2f%%\n", evaluated);
 
 	return (EXIT_SUCCESS);
 }

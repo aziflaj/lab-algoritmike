@@ -92,3 +92,35 @@ void freeText(Text t) {
 void freeIter(Iter iterator) {
 	free (iterator);
 }
+
+/*****************************************************/
+
+float eval_text(Text t) {
+	float r = 0.0;
+	int numberOfNodes = t->count;
+	int sumOfSizes = 0;
+
+	if (t == NULL) { /* do nothing! r == 0.0 */ }
+
+	else if (t->head == t->tail) {
+		r = (float) ( (t->head)->size ) / NODE_TEXT_LEN;
+	}
+
+	/* head != tail */
+	else {
+		Node n = createNode();
+		n = t->head;
+
+		do {
+
+			sumOfSizes += n->size;
+			n = n->next;
+
+		} while (n != NULL);
+
+		r = (float) sumOfSizes / (numberOfNodes * NODE_TEXT_LEN);
+	}	
+
+	
+	return r * 100;
+}
