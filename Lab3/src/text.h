@@ -137,4 +137,10 @@ void moveForwardIter(Text t, Iter iterator, int n);
  */
 void moveBackwardIter(Text t, Iter iterator, int n);
 
+
+/**
+ * @see insert_text at Lab3.pdf
+ */
+void insertTextAfterIter(Text t, Iter i, char *str);
+
 #endif /* _TEXT_H_ */

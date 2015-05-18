@@ -126,11 +126,11 @@ float evalText(Text t) {
 }
 
 void normalizeText(Text t) {
-	char *stringOfText = (char*) malloc(sizeof(char) * t->size);
-
 	if ( (t == NULL) || (t->head == t->tail) ) {
 		return;
 	}
+
+	char *stringOfText = (char*) malloc(sizeof(char) * t->size);
 
 	Node n = createNode();
 	n = t->head;
@@ -232,7 +232,7 @@ void printWithPosition(Text t, Iter iterator) {
 	//translate iterator's icase into node number
 	int nodePosition = ((iterator->icase) / NODE_TEXT_LEN) + 1;
 	//find the index of icase
-	int icaseIndex = (nodePosition + 1) % NODE_TEXT_LEN;
+	int icaseIndex = (nodePosition + 1) % NODE_TEXT_LEN ;
 	debug("node position %d, char %d", nodePosition, icaseIndex);
 
 	Node cursor = t->head;
@@ -257,5 +257,63 @@ void printWithPosition(Text t, Iter iterator) {
 			++counter;
 		}
 		cursor = cursor->next;
+	} while (cursor != NULL);
+}
+
+
+void insertTextAfterIter(Text t, Iter i, char *str) {
+	int addedLength = strlen(str);
+
+	/* TOKENIZING THE OLD TEXT */
+	char *oldText = (char*) malloc(sizeof(char) * t->size);
+
+	Node n = createNode();
+	n = t->head;
+	strcpy(oldText, n->data);
+	n = n->next;
+
+	while (n != NULL) {
+		strcat(oldText, n->data);
+		n = n->next;
+	}
+
+	int length1 = i->icase+1;
+	int length2 = t->size - i->icase - 1;
+
+	char token1[length1];
+	char token2[length2];
+
+	strncpy(token1, oldText, length1);
+	token1[length1] = '\0';
+
+	strncpy(token2, oldText + length1, length2);
+	token2[length2] = '\0';
+
+	/* CREATE THE NEW STRING */
+	char *newText = (char*) malloc(sizeof(char) * (t->size + addedLength));
+	strcpy(newText, token1);
+	strcat(newText, str);
+	strcat(newText, token2);
+
+	freeText(t);
+	t = createText();
+	appendText(t, newText); //normalized text;
+
+	/* SET THE ITERATOR AT THE END OF THE ADDED STRING */
+	i->icase = length1 + addedLength -1 ;
+	int nodePosition = ((i->icase) / NODE_TEXT_LEN) + 1;
+
+	Node cursor = t->head;
+	int counter = 1; //counting nodes as 1-based lists
+
+	do {
+		if (counter != nodePosition) {
+			cursor = cursor->next;
+			++counter;
+		} else {
+			i->self = (Node) cursor;
+			break;
+		}
+
 	} while (cursor != NULL);
 }

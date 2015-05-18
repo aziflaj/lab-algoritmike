@@ -1,5 +1,6 @@
 #include <stdio.h>
 #include <stdlib.h>
+#include <string.h>
 #include "text.h"
 
 
@@ -31,9 +32,10 @@ int main(void) {
 	printWithPosition(hello, iterator);
 	printf("\n");
 
-	printf("Moving the iterator 30 chars backward\n");
-	moveBackwardIter(hello, iterator, 30);
-	printWithPosition(hello, NULL);
+	char *strToAdd = "ALB";
+	insertTextAfterIter(hello, iterator, strToAdd);
+	printf("%d\n", iterator->icase);
+	printWithPosition(hello, iterator);
 	printf("\n");
 	//*/
 
