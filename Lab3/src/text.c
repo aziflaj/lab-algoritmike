@@ -27,7 +27,7 @@ void printText(Text t) {
 	Iter cursor = createIterAtBegin(t);
 
 	while (cursor->self != NULL) {
-		printString(cursor->self->data, cursor->self->size);
+		printf("%s", cursor->self->data);
 		cursor->self = (cursor->self)->next;
 		cursor->icase++;
 	}
@@ -46,6 +46,7 @@ void appendText(Text t, char* s) {
 		Node n = createNode();
 
 		strncpy(n->data, s + (i*NODE_TEXT_LEN), NODE_TEXT_LEN);
+		n->data[NODE_TEXT_LEN] = '\0';
 
 		n->size = strlen(n->data);
 
@@ -95,7 +96,7 @@ void freeIter(Iter iterator) {
 
 /*****************************************************/
 
-float eval_text(Text t) {
+float evalText(Text t) {
 	float r = 0.0;
 	int numberOfNodes = t->count;
 	int sumOfSizes = 0;
@@ -124,3 +125,29 @@ float eval_text(Text t) {
 	
 	return r * 100;
 }
+
+/*
+void normalizeText(Text t) {
+	char *stringOfText;
+
+	if ( (t == NULL) || (t->head == t->tail) ) {
+		return;
+	}
+
+	Node n = createNode();
+	n = t->head;
+	debug("");
+	strAppend(stringOfText, n->data, n->size);
+	debug("");
+	n = n->next;
+
+
+
+	while (n != NULL) {
+		strAppend(stringOfText, n->data, n->size);
+		n = n->next;
+	}
+
+	printf("%s\n",stringOfText);
+}
+*/

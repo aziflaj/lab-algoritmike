@@ -11,8 +11,10 @@ int main(void) {
 	printText(hello);
 	printf("\n");
 
-	float evaluated = eval_text(hello);
-	printf("eval_text of the above is %.2f%%\n", evaluated);
+	float evaluated = evalText(hello);
+	printf("evalText of the above is %.2f%%\n", evaluated);
+
+	// normalizeText(hello);
 
 	return (EXIT_SUCCESS);
 }

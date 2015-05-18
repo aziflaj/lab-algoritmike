@@ -6,7 +6,7 @@
 
 typedef struct linked_list_text_item* Node; 
 struct linked_list_text_item {
-	char data[NODE_TEXT_LEN];
+	char data[NODE_TEXT_LEN+1];
 	int size;
 	Node next;
 	Node prev;
@@ -112,6 +112,12 @@ void freeIter(Iter iterator);
 
 /****************************************************/
 
-float eval_text(Text t);
+float evalText(Text t);
+
+
+/**
+ * @see shift_text at Lab3.pdf
+ */
+void normalizeText(Text t);
 
 #endif /* _TEXT_H_ */
