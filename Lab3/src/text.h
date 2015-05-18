@@ -143,4 +143,9 @@ void moveBackwardIter(Text t, Iter iterator, int n);
  */
 void insertTextAfterIter(Text t, Iter i, char *str);
 
+/**
+ * @see delete_text at Lab3.pdf
+ */
+void deleteTextBeforeIter(Text t, Iter i, int n);
+
 #endif /* _TEXT_H_ */

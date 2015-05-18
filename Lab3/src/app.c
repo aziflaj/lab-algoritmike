@@ -32,11 +32,8 @@ int main(void) {
 	printWithPosition(hello, iterator);
 	printf("\n");
 
-	char *strToAdd = "ALB";
-	insertTextAfterIter(hello, iterator, strToAdd);
-	printf("%d\n", iterator->icase);
-	printWithPosition(hello, iterator);
-	printf("\n");
+	deleteTextBeforeIter(hello, iterator, 3);
+	
 	//*/
 
 	return (EXIT_SUCCESS);

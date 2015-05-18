@@ -317,3 +317,59 @@ void insertTextAfterIter(Text t, Iter i, char *str) {
 
 	} while (cursor != NULL);
 }
+
+void deleteTextBeforeIter(Text t, Iter i, int len) {
+	/* TOKENIZING THE OLD TEXT */
+	char *oldText = (char*) malloc(sizeof(char) * t->size);
+
+	Node n = createNode();
+	n = t->head;
+	strcpy(oldText, n->data);
+	n = n->next;
+
+	while (n != NULL) {
+		strcat(oldText, n->data);
+		n = n->next;
+	}
+
+	int length1 = i->icase - len + 1;
+	int length2 = t->size - i->icase - 1;
+
+	char token1[length1];
+	char token2[length2];
+
+	strncpy(token1, oldText, length1);
+	token1[length1] = '\0';
+
+	strncpy(token2, oldText + i->icase + 1, length2);
+	token2[length2] = '\0';
+
+	/* CREATE THE NEW STRING */
+	char *newText = (char*) malloc(sizeof(char) * (length2 + length1));
+	strcpy(newText, token1);
+	strcat(newText, token2);
+
+	freeText(t);
+	t = createText();
+	appendText(t, newText); //normalized text;
+
+	printf("%s\n", newText);
+
+	/* SET THE ITERATOR AT THE END OF THE ADDED STRING */
+	i->icase = length1 -1 ;
+	int nodePosition = ((i->icase) / NODE_TEXT_LEN) + 1;
+
+	Node cursor = t->head;
+	int counter = 1; //counting nodes as 1-based lists
+
+	do {
+		if (counter != nodePosition) {
+			cursor = cursor->next;
+			++counter;
+		} else {
+			i->self = (Node) cursor;
+			break;
+		}
+
+	} while (cursor != NULL);
+}
