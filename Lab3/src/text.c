@@ -146,3 +146,53 @@ void normalizeText(Text t) {
 	t = createText();
 	appendText(t, stringOfText);
 }
+
+
+void printWithPosition(Text t, Iter i) {
+	if (t == NULL || i == NULL) {
+		return;
+	}
+
+	Node cursor = t->head;
+
+	do {
+		printf("%s\n", cursor->data);
+		cursor = cursor->next;
+	} while (cursor != NULL);
+}
+
+void moveForwardIter(Text t, Iter iterator, int n) {
+	if (t == NULL || iterator == NULL) {
+		return;
+	}
+
+	int newCharPosition = iterator->icase + n;
+	int newNodePosition = ((newCharPosition) / 4) + 1;
+
+	if (newCharPosition > t->size) {
+		newCharPosition = t->size;
+	}
+
+	if (newNodePosition > t->count) {
+		newNodePosition = t->count;
+	}
+
+	debug("newCharPosition is %d and should point to the %d node", newCharPosition, newNodePosition);
+	iterator->icase = newCharPosition;
+	//set the correct node;
+
+	Node cursor = t->head;
+	int counter = 1; //counting nodes as 1-based lists
+
+	do {
+		if (counter != newNodePosition) {
+			cursor = cursor->next;
+			++counter;
+		} else {
+			iterator->self = (Node) cursor;
+			break;
+		}
+
+	} while (cursor != NULL);
+
+}

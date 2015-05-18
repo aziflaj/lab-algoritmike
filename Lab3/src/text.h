@@ -120,4 +120,8 @@ float evalText(Text t);
  */
 void normalizeText(Text t);
 
+void printWithPosition(Text t, Iter i);
+
+void moveForwardIter(Text t, Iter iterator, int n);
+
 #endif /* _TEXT_H_ */
