@@ -120,7 +120,11 @@ float evalText(Text t);
  */
 void normalizeText(Text t);
 
-void printWithPosition(Text t, Iter i);
+
+/**
+ * @see show_text at Lab3.pdf
+ */ 
+void printWithPosition(Text t, Iter iterator);
 
 
 /**

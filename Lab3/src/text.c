@@ -148,26 +148,13 @@ void normalizeText(Text t) {
 }
 
 
-void printWithPosition(Text t, Iter i) {
-	if (t == NULL || i == NULL) {
-		return;
-	}
-
-	Node cursor = t->head;
-
-	do {
-		printf("%s\n", cursor->data);
-		cursor = cursor->next;
-	} while (cursor != NULL);
-}
-
 void moveForwardIter(Text t, Iter iterator, int n) {
 	if (t == NULL || iterator == NULL) {
 		return;
 	}
 
 	int newCharPosition = iterator->icase + n;
-	int newNodePosition = ((newCharPosition) / 4) + 1;
+	int newNodePosition = ((newCharPosition) / NODE_TEXT_LEN) + 1;
 
 	if (newCharPosition > t->size) {
 		newCharPosition = t->size;
@@ -202,7 +189,7 @@ void moveBackwardIter(Text t, Iter iterator, int n) {
 	}
 
 	int newCharPosition = iterator->icase - n;
-	int newNodePosition = ((newCharPosition) / 4) + 1;
+	int newNodePosition = ((newCharPosition) / NODE_TEXT_LEN) + 1;
 
 	if (newCharPosition < 0) {
 		newCharPosition = 0;
@@ -229,4 +216,46 @@ void moveBackwardIter(Text t, Iter iterator, int n) {
 
 	} while (cursor != NULL);
 
+}
+
+void printWithPosition(Text t, Iter iterator) {
+	if (t == NULL) {
+		return;
+	}
+
+	if (iterator == NULL) {
+		printf("*");
+		printText(t);
+		return;
+	}
+
+	//translate iterator's icase into node number
+	int nodePosition = ((iterator->icase) / NODE_TEXT_LEN) + 1;
+	//find the index of icase
+	int icaseIndex = (nodePosition + 1) % NODE_TEXT_LEN;
+	debug("node position %d, char %d", nodePosition, icaseIndex);
+
+	Node cursor = t->head;
+	int counter = 1; //to count the nodes (1-based)
+
+	do {
+		if (counter == nodePosition) {
+
+			for (int i=0;i<icaseIndex;i++) {
+				printf("%c", cursor->data[i]);
+			}
+			
+			printf("*");
+			
+			for (int i=icaseIndex;i<NODE_TEXT_LEN; i++) {
+				printf("%c", cursor->data[i]);
+			}
+			++counter;
+
+		} else {
+			printf("%s", cursor->data);
+			++counter;
+		}
+		cursor = cursor->next;
+	} while (cursor != NULL);
 }
