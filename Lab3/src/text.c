@@ -126,9 +126,8 @@ float evalText(Text t) {
 	return r * 100;
 }
 
-/*
 void normalizeText(Text t) {
-	char *stringOfText;
+	char *stringOfText = (char*) malloc(sizeof(char) * t->size);
 
 	if ( (t == NULL) || (t->head == t->tail) ) {
 		return;
@@ -136,18 +135,15 @@ void normalizeText(Text t) {
 
 	Node n = createNode();
 	n = t->head;
-	debug("");
-	strAppend(stringOfText, n->data, n->size);
-	debug("");
+	strcpy(stringOfText, n->data);
 	n = n->next;
 
-
-
 	while (n != NULL) {
-		strAppend(stringOfText, n->data, n->size);
+		strcat(stringOfText, n->data);
 		n = n->next;
 	}
 
-	printf("%s\n",stringOfText);
+	freeText(t);
+	t = createText();
+	appendText(t, stringOfText);
 }
-*/

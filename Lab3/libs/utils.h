@@ -14,20 +14,4 @@ void debug(const char *format, ...) {
 	printf("\n");
 }
 
-
-/* prints a non null-terminated char array */
-void printString(char *str, int len) {
-	for (int i=0; i<len;i++) {
-		printf("%c", str[i]);
-	}
-}
-
-/* prints a non null-terminated char array (debugging needs) */
-void printStringDebug(char *str, int len) {
-	for (int i=0; i<len;i++) {
-		printf("%c", str[i]);
-	}
-	printf("\t| %d\n",len);
-}
-
 #endif /* _UTILS_H_ */
