@@ -55,7 +55,8 @@ int insertNode(int data, BSTHead root) {
 
 }
 
-//*
+
+
 int insertNodeRec(int data, BSTHead root) {
 
 	if (root == NULL) {
@@ -89,4 +90,21 @@ int insertNodeRec(int data, BSTHead root) {
 
 	}
 }
-//*/
+
+
+
+BSTNode find(int data, BSTHead root) {
+	if (root == NULL) {
+		fprintf(stderr, "%d not found\n", data);
+		return NULL;
+	}
+
+	if (root->data == data) {
+		printf("Found\n");
+		return root;
+	} else if (root->data > data) {
+		return find(data, root->left);
+	} else if (root->data < data) {
+		return find(data, root->right);
+	}
+}

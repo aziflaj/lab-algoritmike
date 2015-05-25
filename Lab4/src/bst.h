@@ -18,4 +18,6 @@ int insertNode(int data, BSTHead root);
 
 int insertNodeRec(int data, BSTHead root);
 
+BSTNode find(int data, BSTHead root);
+
 #endif /* _BST_H_ */
