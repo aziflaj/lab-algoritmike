@@ -50,7 +50,7 @@ void insertNode(int data, BSTHead root) {
 
 }
 
-/*
+//*
 void insertNodeRec(int data, BSTHead root) {
 
 	if (root == NULL) {
@@ -64,11 +64,22 @@ void insertNodeRec(int data, BSTHead root) {
 
 	if (root->data > data) {
 		// insert on the left 
-		insertNodeRec(data, root->left);
+		if (root->left == NULL) {
+			BSTNode newNode = createBSTNode(data);
+			root->left = newNode;
+		} else {
+			insertNodeRec(data, root->left);
+		}
 
 	} else {
 		// insert on the right 
-		insertNodeRec(data, root->right);
+		if (root->right == NULL) {
+			BSTNode newNode = createBSTNode(data);
+			root->right = newNode;
+		} else {
+			insertNodeRec(data, root->right);
+		}
+
 	}
 }
 //*/
