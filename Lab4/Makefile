@@ -11,7 +11,7 @@ all:
 	$(RM) app
 	$(RM) *.exe
 
-	$(CC) $(FLAGS) $(MAIN_FILES) app
+	$(CC) $(FLAGS) $(MAIN_FILES) -o app
 
 	printf "\n"	
 	printf "*********************\n"
