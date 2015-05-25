@@ -27,5 +27,5 @@ Shembull: Supozojme qe eshte dhene pema A. Pas futjes se numrit 45, perftohet pe
 4. Shkruani funksionin `node *research(int n, node *root)` qe gjen elementin me vlere n ne pemen ne pemen me rrenje root. Cili eshte kompleksiteti i ketij funksioni?
 5. Shkruani funksionin `int* length(node *root)` qe gjen gjatesine e pemes. Psh gjatesia e pemeve `A` dhe `B` eshte 3.
 6. Shkruani funksionin `void display_Decreasing(node *root)` qe afishon elementet e pemes ne rendin zbrites.
-7. Shkruani funksionin `void delete(int n, node *root)` qe fshin elementin me vlere `n` ne pemen ne pemen me rrenje root. Ne rastin kur ky element nuk ekziston, atehere ne akran duhet te afishohet pikerisht ky fakt.
+7. Shkruani funksionin `void delete(int n, node *root)` qe fshin elementin me vlere `n` ne pemen ne pemen me rrenje root. Ne rastin kur ky element nuk ekziston, atehere ne ekran duhet te afishohet pikerisht ky fakt.
 
