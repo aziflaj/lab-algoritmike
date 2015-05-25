@@ -12,4 +12,8 @@ struct bst_node {
 
 BSTNode createBSTNode(int data);
 
+void insertNode(int data, BSTHead root);
+
+//void insertNodeRec(int data, BSTHead root);
+
 #endif /* _BST_H_ */
