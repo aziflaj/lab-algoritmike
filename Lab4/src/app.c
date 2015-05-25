@@ -10,11 +10,15 @@ void iter_VS_rec();
 
 void find_test();
 
+void delete_test();
+
 int main(void) {
 	
 	//iter_VS_rec();
 
 	//find_test();
+
+	delete_test();
 
 	return (EXIT_SUCCESS);
 }
@@ -84,4 +88,50 @@ void find_test() {
 
 	BSTNode node = find(item, root);
 	printf("%d\n", node->data);
+}
+
+
+void delete_test() {
+	int nodes[] = { 4, 9, 8, 12, 10, 11, 13, 15, 14 };
+
+	BSTHead root = createBSTNode(16);
+
+	insertNodeRec(4, root);
+	insertNodeRec(9, root);
+	insertNodeRec(8, root);
+	insertNodeRec(12, root);
+	insertNodeRec(10, root);
+	insertNodeRec(11, root);
+	insertNodeRec(13, root);
+	insertNodeRec(15, root);
+	insertNodeRec(14, root);
+	
+	/*****************************************/
+	//delete 8
+	printf("\n\nbefore delete\n");
+	find(8, root);
+	delete(8, root);
+	printf("after delete\n");
+	find(8, root);
+
+ 	/*****************************************/
+ 	//delete 15
+	printf("\n\nbefore delete\n");
+	find(15, root);
+	delete(15, root);
+	printf("after delete\n");
+	find(15, root);
+	find(14, root);
+	
+
+	/*****************************************/
+	//delete 12
+	printf("\n\nbefore delete\n");
+	find(12, root);
+	delete(12, root);
+	printf("after delete\n");
+	find(12, root);
+	find(10, root);
+	find(14, root);
+
 }

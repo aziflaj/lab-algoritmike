@@ -100,11 +100,50 @@ BSTNode find(int data, BSTHead root) {
 	}
 
 	if (root->data == data) {
-		printf("Found\n");
+		printf("%d found\n", data);
 		return root;
 	} else if (root->data > data) {
 		return find(data, root->left);
 	} else if (root->data < data) {
 		return find(data, root->right);
 	}
+}
+
+
+void delete(int n, BSTHead root) {
+
+	BSTNode node = find(n, root);
+
+	if (node == NULL) {
+		printf("%d not found\n", n);
+		return;
+	}
+
+	if (node->left == NULL && node->right == NULL) {
+		// just delete the blody node!
+		free(node);
+		return;
+	}
+
+
+	//only one child
+	//only right child
+	if (node->left == NULL && node->right != NULL) {
+		node->data = node->right->data;
+		free(node->right); 
+		return;
+	}
+
+	//only left child
+	if (node->right == NULL && node->left != NULL) {
+		node->data = node->left->data;
+		free(node->left);
+		return;
+	}	
+
+
+	//two children
+	node->data = node->right->data;
+	delete(n, node->right);
+
 }

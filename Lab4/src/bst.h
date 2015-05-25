@@ -20,4 +20,8 @@ int insertNodeRec(int data, BSTHead root);
 
 BSTNode find(int data, BSTHead root);
 
+int depth(BSTHead root);
+
+void delete(int n, BSTHead root);
+
 #endif /* _BST_H_ */
