@@ -147,3 +147,10 @@ void delete(int n, BSTHead root) {
 	delete(n, node->right);
 
 }
+
+int depth(BSTHead root) {
+	if (root == NULL) 
+		return -1;
+
+	return depth(root->left) > depth(root->right) ? 1 + depth(root->left) : 1 + depth(root->right);
+}
