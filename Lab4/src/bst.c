@@ -10,7 +10,7 @@ BSTNode createBSTNode(int data) {
 
 
 
-void insertNode(int data, BSTHead root) {
+int insertNode(int data, BSTHead root) {
 	
 	/* if root is null, create the new root */
 	if (root == NULL) {
@@ -18,7 +18,7 @@ void insertNode(int data, BSTHead root) {
 	}
 
 	else {
-		BSTNode bstCursor = head;
+		BSTNode bstCursor = root;
 		BSTNode newNode = createBSTNode(data);
 
 		do {
@@ -26,10 +26,12 @@ void insertNode(int data, BSTHead root) {
 			if (bstCursor->data > data) {
 				/* add data node to the right */
 				bstCursor = bstCursor->right;
+				return INSERTED;
 
 			} else if ( bstCursor->data < data) {
 				/* add data node to the left */
-				bstCursor = bstCursor->left;				
+				bstCursor = bstCursor->left;	
+				return INSERTED;			
 			}
 
 		} while (bstCursor->left != NULL || bstCursor->right != NULL);
@@ -38,28 +40,31 @@ void insertNode(int data, BSTHead root) {
 		if (bstCursor->data > data) {
 			/* add to the left of bstCursor */
 			bstCursor->left = newNode;
+			return INSERTED;
 
 		} else if (bstCursor->data < data) {
 			/* add to the right of bstCursor */
 			bstCursor->right = newNode;
+			return INSERTED;
 
 		} else {
-			printf("This node is already inserted\n");
+			//printf("This node is already inserted\n");
+			return NOT_INSERTED;
 		}
 	}
 
 }
 
 //*
-void insertNodeRec(int data, BSTHead root) {
+int insertNodeRec(int data, BSTHead root) {
 
 	if (root == NULL) {
-		return;
+		return NOT_INSERTED;
 	}
 
 	if (root->data == data) {
-		printf("This node is already inserted\n");
-		return;
+		//printf("This node is already inserted\n");
+		return NOT_INSERTED;
 	}
 
 	if (root->data > data) {
@@ -67,6 +72,7 @@ void insertNodeRec(int data, BSTHead root) {
 		if (root->left == NULL) {
 			BSTNode newNode = createBSTNode(data);
 			root->left = newNode;
+			return INSERTED;
 		} else {
 			insertNodeRec(data, root->left);
 		}
@@ -76,6 +82,7 @@ void insertNodeRec(int data, BSTHead root) {
 		if (root->right == NULL) {
 			BSTNode newNode = createBSTNode(data);
 			root->right = newNode;
+			return INSERTED;
 		} else {
 			insertNodeRec(data, root->right);
 		}

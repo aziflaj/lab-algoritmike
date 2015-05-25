@@ -19,7 +19,7 @@ all:
 	printf "*********************"
 	printf "\n"
 
-clear:
+clean:
 	$(RM) app
 	$(RM) *.exe
 
