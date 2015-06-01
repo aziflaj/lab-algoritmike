@@ -10,8 +10,8 @@ BSTNode createBSTNode(int data) {
 
 
 
-int insertNode(int data, BSTHead root) {
-	
+insertion_status insertNode(int data, BSTHead root) {
+
 	/* if root is null, create the new root */
 	if (root == NULL) {
 		root = createBSTNode(data);
@@ -22,7 +22,7 @@ int insertNode(int data, BSTHead root) {
 		BSTNode newNode = createBSTNode(data);
 
 		do {
-			
+
 			if (bstCursor->data > data) {
 				/* add data node to the right */
 				bstCursor = bstCursor->right;
@@ -30,8 +30,8 @@ int insertNode(int data, BSTHead root) {
 
 			} else if ( bstCursor->data < data) {
 				/* add data node to the left */
-				bstCursor = bstCursor->left;	
-				return INSERTED;			
+				bstCursor = bstCursor->left;
+				return INSERTED;
 			}
 
 		} while (bstCursor->left != NULL || bstCursor->right != NULL);
@@ -57,7 +57,7 @@ int insertNode(int data, BSTHead root) {
 
 
 
-int insertNodeRec(int data, BSTHead root) {
+insertion_status insertNodeRec(int data, BSTHead root) {
 
 	if (root == NULL) {
 		return NOT_INSERTED;
@@ -69,7 +69,7 @@ int insertNodeRec(int data, BSTHead root) {
 	}
 
 	if (root->data > data) {
-		// insert on the left 
+		// insert on the left
 		if (root->left == NULL) {
 			BSTNode newNode = createBSTNode(data);
 			root->left = newNode;
@@ -79,7 +79,7 @@ int insertNodeRec(int data, BSTHead root) {
 		}
 
 	} else {
-		// insert on the right 
+		// insert on the right
 		if (root->right == NULL) {
 			BSTNode newNode = createBSTNode(data);
 			root->right = newNode;
@@ -130,7 +130,7 @@ void delete(int n, BSTHead root) {
 	//only right child
 	if (node->left == NULL && node->right != NULL) {
 		node->data = node->right->data;
-		free(node->right); 
+		free(node->right);
 		return;
 	}
 
@@ -139,7 +139,7 @@ void delete(int n, BSTHead root) {
 		node->data = node->left->data;
 		free(node->left);
 		return;
-	}	
+	}
 
 
 	//two children
@@ -149,7 +149,7 @@ void delete(int n, BSTHead root) {
 }
 
 int depth(BSTHead root) {
-	if (root == NULL) 
+	if (root == NULL)
 		return -1;
 
 	return depth(root->left) > depth(root->right) ? 1 + depth(root->left) : 1 + depth(root->right);
